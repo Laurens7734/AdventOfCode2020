@@ -23,5 +23,17 @@ namespace AdventOfCode2020
             }
             return result;
         }
+
+        public List<string> GetStringList()
+        {
+            List<string> result = new List<string>();
+            System.IO.StreamReader file = new System.IO.StreamReader(datafile);
+            string line;
+            while ((line = file.ReadLine()) != null)
+            {
+                result.Add(line);
+            }
+            return result;
+        }
     }
 }

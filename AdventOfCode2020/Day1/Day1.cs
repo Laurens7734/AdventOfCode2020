@@ -13,7 +13,7 @@ namespace AdventOfCode2020
             numbers = n;
         }
 
-        public string answer1()
+        public string Answer1()
         {
             foreach(int i in numbers)
             {
@@ -26,7 +26,7 @@ namespace AdventOfCode2020
             return "error stuff not found";
         }
 
-        public string answer2()
+        public string Answer2()
         {
             for(int i = 0; i < numbers.Count; i++)
             {
