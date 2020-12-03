@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AdventOfCode2020
 {
-    public class Day1
+    public class Day1 : Day
     {
         List<int> numbers;
 

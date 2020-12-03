@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AdventOfCode2020
 {
-    public class Day2
+    public class Day2 : Day
     {
         List<string> database;
 
