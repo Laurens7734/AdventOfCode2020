@@ -7,13 +7,13 @@ namespace AdventOfCode2020
     {
         static void Main(string[] args)
         {
-            DataToList datareader = new DataToList("InputData/Day2Data.txt");
+            DataToList datareader = new DataToList("InputData/Day3Data.txt");
 
             //List<int> data = datareader.GetIntList();
             List<string> data = datareader.GetStringList();
             //List<string> data = TestData();
 
-           Day2 d = new Day2(data);
+            Day d = new Day3(data);
             Console.WriteLine(d.Answer1());
             Console.WriteLine(d.Answer2());
             Console.ReadKey();
@@ -22,9 +22,9 @@ namespace AdventOfCode2020
         static List<string> TestData()
         {
             List<string> s = new List<string>();
-            s.Add("1-3 a: abcde");
-            s.Add("1-3 b: cdefg");
-            s.Add("2-9 c: ccccccccc");
+            s.Add("..##.......");
+            s.Add("#...#...#..");
+            s.Add(".#....#..#.");
 
             return s;
         }
