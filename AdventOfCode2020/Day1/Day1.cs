@@ -6,11 +6,14 @@ namespace AdventOfCode2020
 {
     public class Day1 : Day
     {
-        List<int> numbers;
+        List<int> numbers = new List<int>();
 
-        public Day1(List<int> n)
+        public Day1(List<string> lines)
         {
-            numbers = n;
+            foreach(string s in lines)
+            {
+                numbers.Add(int.Parse(s));
+            }
         }
 
         public string Answer1()
