@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace AdventOfCode2020
 {
-    class Day5 : Day
+    class Day05 : Day
     {
         List<string> data;
 
-        public Day5(List<string> d)
+        public Day05(List<string> d)
         {
             data = d;
         }

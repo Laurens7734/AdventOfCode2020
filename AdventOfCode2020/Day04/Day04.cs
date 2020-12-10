@@ -5,11 +5,11 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode2020
 {
-    class Day4 : Day
+    class Day04 : Day
     {
         public List<string> data;
         public List<string> q1Req = new List<string> { "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid" };
-        public Day4(List<string> d)
+        public Day04(List<string> d)
         {
             data = d;
         }

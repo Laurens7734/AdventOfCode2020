@@ -4,11 +4,11 @@ using System.Text;
 
 namespace AdventOfCode2020
 {
-    class Day7 : Day
+    class Day07 : Day
     {
         List<Bag> bags;
 
-        public Day7(List<string> d)
+        public Day07(List<string> d)
         {
             List<Bag> knownBags = new List<Bag>();
             foreach (string s in d)

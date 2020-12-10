@@ -35,4 +35,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Day10\" />
+  </ItemGroup>
+
 </Project>

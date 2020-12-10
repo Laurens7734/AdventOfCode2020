@@ -4,12 +4,12 @@ using System.Text;
 
 namespace AdventOfCode2020
 {
-    class Day8 : Day
+    class Day08 : Day
     {
         List<string> data;
         int accumulator = 0;
 
-        public Day8(List<string> d)
+        public Day08(List<string> d)
         {
             data = d;
         }
