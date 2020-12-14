@@ -53,7 +53,7 @@ namespace AdventOfCode2020
             }
 
             int elements = 2;
-            long step = 1;
+            long step = busnumbers[0].Item1;
 
             for(long l = 0; l < long.MaxValue; l += step)
             {
