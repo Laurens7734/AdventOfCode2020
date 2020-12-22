@@ -7,10 +7,10 @@ namespace AdventOfCode2020
     {
         static void Main(string[] args)
         {
-            DataToList datareader = new DataToList("InputData/Day21Data.txt");
+            DataToList datareader = new DataToList("InputData/Day22Data.txt");
             List<string> data = datareader.GetStringList();
 
-            Day d = new Day21(data);
+            Day d = new Day22(data);
             Console.WriteLine(d.Answer1());
             Console.WriteLine(d.Answer2());
             Console.ReadKey();
