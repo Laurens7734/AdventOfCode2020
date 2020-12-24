@@ -7,14 +7,18 @@ namespace AdventOfCode2020
     class Day23:Day
     {
         List<Cup> allcups;
+        List<Cup> cupsQ2;
         public Day23(List<string> d)
         {
             allcups = new List<Cup>();
-            foreach(char c in d[0])
+            cupsQ2 = new List<Cup>();
+            foreach (char c in d[0])
             {
                 int number = (int)char.GetNumericValue(c);
                 Cup a = new Cup(number);
+                Cup b = new Cup(number);
                 allcups.Add(a);
+                cupsQ2.Add(b);
             }
             for(int i = 0; i < allcups.Count; i++)
             {
@@ -25,6 +29,7 @@ namespace AdventOfCode2020
                 else
                 {
                     allcups[i].Next = allcups[i + 1];
+                    cupsQ2[i].Next = cupsQ2[i + 1];
                 }
             }
         }
@@ -69,21 +74,26 @@ namespace AdventOfCode2020
 
         public string Answer2()
         {
-            ResetCups();
-            Cup previous = allcups.Find(x => x.number == 8);
-            Cup lastNum = allcups.Find(x => x.number == 9);
+            Cup previous = cupsQ2[^1];
+            Cup lastNum = null;
+            for(int a = 1; a <= cupsQ2.Count; a++)
+            {
+                if (a != 1)
+                    cupsQ2.Find(x => x.number == a).LowerNum = lastNum;
+                lastNum = cupsQ2.Find(x => x.number == a);
+            }
             for (int i = 10; i <= 1000000; i++)
             {
                 Cup c = new Cup(i);
-                allcups.Add(c);
+                cupsQ2.Add(c);
                 c.LowerNum = lastNum;
                 previous.Next = c;
                 previous = c;
                 lastNum = c;
             }
-            previous.Next = allcups[0];
-            allcups.Find(x => x.number == 1).LowerNum = lastNum;
-            Cup current = allcups[0];
+            previous.Next = cupsQ2[0];
+            cupsQ2.Find(x => x.number == 1).LowerNum = lastNum;
+            Cup current = cupsQ2[0];
             for (long l = 0; l < 10000000; l++)
             {
                 Cup aftercurrent = current.Next;
@@ -106,35 +116,11 @@ namespace AdventOfCode2020
                 }
                 current = current.Next;
             }
-            Cup after1 = allcups.Find(x => x.number == 1).Next;
+            Cup after1 = cupsQ2.Find(x => x.number == 1).Next;
             long num1 = after1.number;
             long num2 = after1.Next.number;
             long answer = num1 * num2;
             return answer.ToString();
-        }
-
-        public void ResetCups()
-        {
-            string d = "624397158";
-            allcups = new List<Cup>();
-            foreach (char c in d)
-            {
-                int number = (int)char.GetNumericValue(c);
-                Cup a = new Cup(number);
-                allcups.Add(a);
-            }
-            for (int i = 0; i < allcups.Count; i++)
-            {
-                if (i == allcups.Count - 1)
-                {
-                    allcups[i].Next = allcups[0];
-                }
-                else
-                {
-                    allcups[i].Next = allcups[i + 1];
-                }
-                allcups[i].LowerNum = allcups.Find(x => x.number == allcups[i].number - 1);
-            }
         }
     }
 }
